@@ -1,8 +1,8 @@
 let caratteri = [..." !\"#%&'()*,-./:;?@[\\]_{|}0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ═║╒╓╔╕╖╗╘╙╚╛╜╝╞╟╠╡╢╣╤╥╦╧╨╩╪╫╬▖▗▘▙▚▛▜▝▞▟█"];
 
 let moduli = []
-let charW = 14
-let charH = 24
+let charW = 12
+let charH = 55
 let message = `We agree to provide you with the Instagram Service. The Service includes all of the Instagram products, features, applications, services, technologies, and software that we provide to advance Instagram's mission: To bring you closer to the people and things you love. The Service is made up of the following aspects: Offering personalized opportunities to create, connect, communicate, discover and share. People are different. So we offer you different types of accounts and features to help you create, share, grow your presence, and communicate with people on and off Instagram. Part of that is highlighting content, features, offers and accounts that you might be interested in, and offering ways for you to experience Instagram, based on things that you and others do on and off Instagram.`
 
 let finalText = []
@@ -55,8 +55,8 @@ function creaModuli() {
   let parole = message.split(" ")
   let righe = []
   let riga = ""
-  let limite = int(width / charW) - 2
-
+  let textBlockWidth = width * 0.6;         // shrink to 60% width
+  let limite = int(textBlockWidth / charW);
   for (let i = 0; i < parole.length; i++) {
     if ((riga + parole[i]).length < limite) {
       riga += parole[i] + " "
@@ -82,7 +82,7 @@ function creaModuli() {
 
 function draw() {
   background('#edebeb')
-  fill('#af8ec2');
+  fill(0);
   for (let m of moduli) {
     m.display()
     m.update()

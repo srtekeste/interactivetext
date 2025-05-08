@@ -15,9 +15,9 @@ function setup() {
 function draw() {
   background('#edebeb');
   textSize(width/24);
-  fill('#af8ec2');
+  fill(0);
     text("Offering personalized opportunities to", width / 7.7, height / 3 - 30);
-  
+  fill('#af8ec2');
   textFont("prestige-elite-std"); 
   text(poetry[index], width / 1.2, height / 3 - 30);
 }
