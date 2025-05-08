@@ -1,4 +1,4 @@
-var poetry = ["create", "connect", "communicate", "discover", "share"];
+var poetry = ["create.", "connect.", "communicate.", "discover.", "share."];
 
 var index = 0;
 
@@ -14,7 +14,7 @@ function setup() {
 
 function draw() {
   background('#edebeb');
-  let fixedTextSize = 48;
+  let fixedTextSize = 20;
   textSize(fixedTextSize);
   textFont("prestige-elite-std");
 
@@ -24,7 +24,10 @@ function draw() {
   let fullSentence = staticText + dynamicWord;
   let sentenceWidth = textWidth(fullSentence);
   let centerX = (width - sentenceWidth) / 2;
-  let y = height / 3 - 30;
+
+
+  let y = height / 2 + (textAscent() - textDescent()) / 2;
+
 
   fill(0);
   text(staticText, centerX, y);

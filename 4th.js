@@ -36,7 +36,7 @@ function windowResized(){
 
 function setup() {
   createCanvas(windowWidth, windowHeight);
-  textFont("Courier New", charH);
+  textFont("prestige-elite-std", charH);
   textSize(charH);
   textAlign(LEFT, TOP);
   frameRate(30);
