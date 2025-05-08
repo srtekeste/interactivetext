@@ -46,7 +46,6 @@ function setup() {
   let startX = (width - textPixelWidth) / 2;
   let y = height / 2;
 
-  // Add animated modules for each letter in "different"
   for (let i = 0; i < animatedText.length; i++) {
     let x = startX + (staticText.length + i) * charW;
     animatedModules.push(new Modulo(x, y, animatedText[i]));
@@ -61,11 +60,9 @@ function draw() {
   let startX = (width - textPixelWidth) / 2;
   let y = height / 2;
 
-  // Draw static part
   fill(30);
   text(staticText, startX, y);
 
-  // Draw animated "different"
   for (let m of animatedModules) {
     m.display();
     m.update();
@@ -76,7 +73,6 @@ function drawTypewriterArrow(x, y, size, hover) {
   let w = size * 1.4;
   let h = size * 1.2;
 
-  // Generate shared jitter offsets ONCE
   let jitterX = 0;
   let jitterY = 0;
   if (hover) {
@@ -84,13 +80,11 @@ function drawTypewriterArrow(x, y, size, hover) {
     jitterY = random(-2, 2);
   }
 
-  // Draw key background (box)
   noStroke();
   fill(hover ? '#af8ec2' : 'rgb(0,159,30)');
   rectMode(CENTER);
   rect(x + jitterX, y + jitterY, w, h, 6);
 
-  // Draw arrow symbol
   fill('white');
   textFont("prestige-elite-std");
   textSize(size);

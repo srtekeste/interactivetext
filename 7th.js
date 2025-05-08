@@ -9,7 +9,7 @@ function windowResized(){
   
   function setup() {
     createCanvas(windowWidth, windowHeight);
-    textFont("Courier New");
+    textFont("prestige-elite-std");
     textSize(80);
     scrollX = width;
     rectMode(CENTER);
@@ -36,7 +36,6 @@ function windowResized(){
       tint('rgb(0,159,30)');
       image(capture, centerX + gapX, centerY + gapY);
   
-      // Scrolling text
       noTint();
       fill('#af8ec2');
       textAlign(LEFT, CENTER);
@@ -47,7 +46,6 @@ function windowResized(){
       }
     }
   
-    // Hover detection for camera icon
     let iconX = width / 2;
     let iconY = height / 2;
     let w = 60;
@@ -66,27 +64,22 @@ function windowResized(){
     rectMode(CENTER);
     noStroke();
   
-    // Flip color on hover
     let camColor;
     if (hovering) {
-      camColor = isOn ? 'rgb(0,159,30)' : '#af8ec2'; // flip color
+      camColor = isOn ? 'rgb(0,159,30)' : '#af8ec2'; 
     } else {
       camColor = isOn ? '#af8ec2' : 'rgb(0,159,30)';
     }
   
-    // Camera body
     fill(camColor);
     rect(0, 0, 80, 50, 10);
   
-    // Top bump (flash)
     fill(isOn ? 200: 200);
     rect(20, -30, 20, 15, 5);
   
-    // Shutter button
     fill('#555');
     ellipse(-25, -28, 10, 10);
   
-    // Lens
     fill('#333');
     ellipse(0, 0, 26, 26);
     fill('#999');

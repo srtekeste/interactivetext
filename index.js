@@ -26,7 +26,7 @@ function windowResized(){
       mouseY < centerY + txtH / 2;
   
     if (isClicked) {
-      window.location.href = "2nd.html";  // ← Link now goes to 2nd.html
+      window.location.href = "2nd.html";  
     }
   }
   

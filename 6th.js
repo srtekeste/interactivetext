@@ -7,7 +7,7 @@ function windowResized() {
 
 function setup() {
   createCanvas(windowWidth, windowHeight);
-  textFont('Courier New');
+  textFont("prestige-elite-std");
   textSize(20);
   textAlign(CENTER, TOP);
   textLeading(28);
@@ -21,16 +21,16 @@ function draw() {
 
   let boxWidth = width * 0.75;
   let boxX = (width - boxWidth) / 2;
-  let lines = wrapText(content, boxWidth); // <-- get wrapped lines here
+  let lines = wrapText(content, boxWidth); 
   let paraHeight = lines.length * textLeading();
 
   for (let y = yStart; y < height + paraHeight; y += paraHeight + 40) {
     for (let i = 0; i < lines.length; i++) {
       let lineY = y - paraHeight / 2 + i * textLeading();
       let amt = constrain(map(lineY, 0, height, 0, 1), 0, 1);
-      let warpStrength = 10; // how much to warp
+      let warpStrength = 10; 
       let distance = abs(mouseY - lineY);
-      let offset = map(distance, 0, 100, warpStrength, 0); // closer = more warp
+      let offset = map(distance, 0, 100, warpStrength, 0); 
       let warpedY = lineY + sin(frameCount * 0.1 + i) * offset;
 
       fill(lerpColor(c2, c1, amt));
@@ -38,7 +38,7 @@ function draw() {
     }
   }
 
-  yStart--; // scroll upward
+  yStart--; 
 }
 
 function wrapText(txt, wrapWidth) {

@@ -8,7 +8,7 @@ let currentColor;
 
 function setup() {
   createCanvas(windowWidth, windowHeight);
-  textFont("Courier New");
+  textFont("prestige-elite-std");
   textAlign(LEFT, TOP);
   fontSize = 22;
   textSize(fontSize);
@@ -52,16 +52,15 @@ function prepareGrid() {
 }
 
 function draw() {
-  // Detect direction of mouse movement
   if (mouseX > prevMouseX) {
-    currentColor = color(0); // black
+    currentColor = color(0); 
   } else if (mouseX < prevMouseX) {
-    currentColor = color('#af8ec2'); // purple
+    currentColor = color('#af8ec2'); 
   }
   prevMouseX = mouseX;
 
   background('#edebeb');
-  fill(currentColor || color('#af8ec2')); // default on first frame
+  fill(currentColor || color('#af8ec2')); 
 
   let startX = (width - width * 0.8) / 2;
   let startY = (height - charGrid.length * fontSize * 1.2) / 2;
