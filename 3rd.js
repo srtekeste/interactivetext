@@ -14,12 +14,24 @@ function setup() {
 
 function draw() {
   background('#edebeb');
-  textSize(width/24);
+  let fixedTextSize = 48;
+  textSize(fixedTextSize);
+  textFont("prestige-elite-std");
+
+  let staticText = "Offering personalized opportunities to ";
+  let dynamicWord = poetry[index];
+
+  let fullSentence = staticText + dynamicWord;
+  let sentenceWidth = textWidth(fullSentence);
+  let centerX = (width - sentenceWidth) / 2;
+  let y = height / 3 - 30;
+
   fill(0);
-    text("Offering personalized opportunities to", width / 7.7, height / 3 - 30);
+  text(staticText, centerX, y);
+
   fill('#af8ec2');
-  textFont("prestige-elite-std"); 
-  text(poetry[index], width / 1.2, height / 3 - 30);
+  let staticWidth = textWidth(staticText);
+  text(dynamicWord, centerX + staticWidth, y);
 }
  
 function keyPressed() {
